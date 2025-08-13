@@ -1,0 +1,139 @@
+:root {
+    --bg-color: #1a1a2e;
+    --card-color: #2e2e4e;
+    --text-color: #e4e4f7;
+    --primary-color: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --ai-bubble-color: #3f3f6c;
+    --user-bubble-color: #8b5cf6;
+    --border-radius: 12px;
+}
+
+/* Reset and basic body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container for the AI app */
+.container {
+    width: 90%;
+    max-width: 600px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Header styling */
+.header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Chat window styling */
+.chat-window {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Message styling */
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.ai-message {
+    background-color: var(--ai-bubble-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background-color: var(--user-bubble-color);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+/* Input area styling */
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 25px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+#userInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+#sendBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#sendBtn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
